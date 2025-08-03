@@ -1,11 +1,12 @@
 import time
 import pytest
-from Back_API.utils.api_utils import ApiUtils
-from Back_API.servises.auth.auth_service import AuthService
+from back_api.utils.api_utils import ApiUtils
+from back_api.servises.auth.auth_service import AuthService
 from faker import Faker
-from Back_API.servises.auth.model.login_request import LoginRequest
-from Back_API.servises.auth.model.register_request import RegisterRequest
-from Back_API.servises.university.university_service import UniversityService
+from back_api.servises.auth.model.login_request import LoginRequest
+from back_api.servises.auth.model.register_request import RegisterRequest
+from back_api.servises.university.university_service import UniversityService
+import requests
 
 faker = Faker()
 
@@ -51,9 +52,9 @@ def university_api_utils_admin(access_token):
     return api_utils
 
 
-#@pytest.fixture(scope='session', autouse=True)
+@pytest.fixture(scope='session', autouse=True)
 def auth_service_readiness():
-    timeout = 200
+    timeout = 100
     start_time = time.time()
     while time.time() < start_time + timeout:
         try:

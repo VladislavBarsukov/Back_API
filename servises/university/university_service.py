@@ -1,16 +1,17 @@
-from Back_API.servises.auth.helpers.authorization_helper import AuthorizationHelper
-from Back_API.servises.auth.helpers.user_helper import UserHelper
-from Back_API.servises.auth.model.register_request import RegisterRequest
-from Back_API.servises.general.models.success_response import SuccessResponse
-from Back_API.utils.api_utils import ApiUtils
-from Back_API.servises.general.base_service import BaseService
-from Back_API.servises.university.helpers.group_helper import GroupHelper
-from Back_API.servises.university.helpers.student_helper import StudentHelper
-from Back_API.servises.university.models.group_request import GroupRequest
-from Back_API.servises.university.models.group_response import GroupResponse
-from Back_API.servises.university.models.student_request import StudentRequest
-from Back_API.servises.university.models.student_response import StudentResponse
+from back_api.servises.auth.helpers.authorization_helper import AuthorizationHelper
+from back_api.servises.auth.helpers.user_helper import UserHelper
+from back_api.servises.auth.model.register_request import RegisterRequest
+from back_api.servises.general.models.success_response import SuccessResponse
+from back_api.utils.api_utils import ApiUtils
+from back_api.servises.general.base_service import BaseService
+from back_api.servises.university.helpers.group_helper import GroupHelper
+from back_api.servises.university.helpers.student_helper import StudentHelper
+from back_api.servises.university.models.group_request import GroupRequest
+from back_api.servises.university.models.group_response import GroupResponse
+from back_api.servises.university.models.student_request import StudentRequest
+from back_api.servises.university.models.student_response import StudentResponse
 from requests import HTTPError, Response
+
 
 class UniversityService(BaseService):
     SERVICE_URL = "http://127.0.0.1:8001"
@@ -28,7 +29,7 @@ class UniversityService(BaseService):
         response = self.student_helper.post_student(json=student_request.model_dump())
         return StudentResponse(**response.json())
 
-    def update_student(self, student_id, student_request: StudentRequest)-> StudentResponse:
+    def update_student(self, student_id, student_request: StudentRequest) -> StudentResponse:
         response = self.student_helper.put_student(student_id, json=student_request.model_dump())
         return StudentResponse(**response.json())
 
@@ -37,19 +38,8 @@ class UniversityService(BaseService):
             response = self.student_helper.get_student(student_id)
             response.raise_for_status()
             return StudentResponse(**response.json())
-        except HTTPError as e:
-            if e.response.status_code == 404:
-                return "Not found"
-            else:
-                raise
+        except HTTPError:
+            raise
 
     def delete_student(self, student_id) -> str:
-        response: Response = self.student_helper.delete_student(student_id)
-        try:
-            response.raise_for_status()
-            return "Student deleted"
-        except HTTPError as e:
-            if e.response.status_code == 404:
-                return "Not found"
-            else:
-                raise
+        self.student_helper.delete_student(student_id)

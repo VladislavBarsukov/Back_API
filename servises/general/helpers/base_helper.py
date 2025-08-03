@@ -1,4 +1,4 @@
-from Back_API.utils.api_utils import ApiUtils
+from back_api.utils.api_utils import ApiUtils
 
 class BaseHelper:
 

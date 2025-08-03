@@ -1,7 +1,7 @@
 import requests.status_codes
 from faker import Faker
 
-from Back_API.servises.university.helpers.group_helper import GroupHelper
+from back_api.servises.university.helpers.group_helper import GroupHelper
 
 faker = Faker()
 
@@ -24,8 +24,8 @@ class TestCreateGroupContract:
         group_helper = GroupHelper(api_utils=university_api_utils_admin)
         response = group_helper.post_group({"name": faker.name()})
         same_name = response.json()["name"]
-        response2 = group_helper.post_group({"name": same_name})
-        assert response2.status_code == requests.status_codes.codes.conflict, \
+        response = group_helper.post_group({"name": same_name})
+        assert response.status_code == requests.status_codes.codes.conflict, \
             f"Wrong status code, Actual: '{response.status_code}', expected {requests.status_codes.codes.unauthorized}"
 
     def test_create_group_admin_no_name(self, university_api_utils_admin):

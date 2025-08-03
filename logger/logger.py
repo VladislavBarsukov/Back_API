@@ -4,7 +4,7 @@ import sys
 from logging.handlers import RotatingFileHandler
 from typing import Union
 
-from Back_API.logger.logger_config import LoggerConfig
+from back_api.logger.logger_config import LoggerConfig
 
 class Logger:
     if not os.path.isdir(LoggerConfig.LOGS_DIR_NAME):

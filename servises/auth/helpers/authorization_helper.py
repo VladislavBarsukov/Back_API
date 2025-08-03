@@ -1,5 +1,5 @@
 import requests
-from Back_API.servises.general.helpers.base_helper import BaseHelper
+from back_api.servises.general.helpers.base_helper import BaseHelper
 
 class AuthorizationHelper(BaseHelper):
     ENDPOINT_PREFIX = "/auth"

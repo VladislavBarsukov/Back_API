@@ -1,4 +1,4 @@
-from Back_API.servises.university.models.base_group import BaseGroup
+from back_api.servises.university.models.base_group import BaseGroup
 
 
 class GroupResponse(BaseGroup):
