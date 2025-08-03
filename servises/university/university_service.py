@@ -22,15 +22,20 @@ class UniversityService(BaseService):
         self.student_helper = StudentHelper(self.api_utils)
 
     def create_group(self, group_request: GroupRequest) -> GroupResponse:
-        response = self.group_helper.post_group(json=group_request.model_dump())
+        response = self.group_helper.post_group(
+            json=group_request.model_dump())
         return GroupResponse(**response.json())
 
-    def create_student(self, student_request: StudentRequest) -> StudentResponse:
-        response = self.student_helper.post_student(json=student_request.model_dump())
+    def create_student(
+            self, student_request: StudentRequest) -> StudentResponse:
+        response = self.student_helper.post_student(
+            json=student_request.model_dump())
         return StudentResponse(**response.json())
 
-    def update_student(self, student_id, student_request: StudentRequest) -> StudentResponse:
-        response = self.student_helper.put_student(student_id, json=student_request.model_dump())
+    def update_student(self, student_id,
+                       student_request: StudentRequest) -> StudentResponse:
+        response = self.student_helper.put_student(
+            student_id, json=student_request.model_dump())
         return StudentResponse(**response.json())
 
     def get_student(self, student_id) -> StudentResponse | str:

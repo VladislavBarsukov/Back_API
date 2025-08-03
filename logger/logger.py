@@ -6,6 +6,7 @@ from typing import Union
 
 from back_api.logger.logger_config import LoggerConfig
 
+
 class Logger:
     if not os.path.isdir(LoggerConfig.LOGS_DIR_NAME):
         os.makedirs(LoggerConfig.LOGS_DIR_NAME)

@@ -2,11 +2,13 @@ from enum import StrEnum
 
 from pydantic import BaseModel, ConfigDict
 
+
 class DegreeEnum(StrEnum):
     ASSOCIATE = "Associate"
     BACHELOR = "Bachelor"
     MASTER = "Master"
     DOCTORATE = "Doctorate"
+
 
 class StudentRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")

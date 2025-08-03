@@ -36,19 +36,24 @@ def access_token(auth_api_utils_anonym):
                                                                 password=password,
                                                                 password_repeat=password,
                                                                 email=faker.email()))
-    login_response = auth_service.login_user(login_request=LoginRequest(username=username, password=password))
+    login_response = auth_service.login_user(
+        login_request=LoginRequest(
+            username=username, password=password))
     return login_response.access_token
 
 
 @pytest.fixture(scope="function", autouse=False)
 def auth_api_utils_admin(access_token):
-    api_utils = ApiUtils(url=AuthService.SERVICE_URL, headers={"Authorization": f"Bearer {access_token}"})
+    api_utils = ApiUtils(
+        url=AuthService.SERVICE_URL, headers={
+            "Authorization": f"Bearer {access_token}"})
     return api_utils
 
 
 @pytest.fixture(scope="function", autouse=False)
 def university_api_utils_admin(access_token):
-    api_utils = ApiUtils(url=UniversityService.SERVICE_URL, headers={"Authorization": f"Bearer {access_token}"})
+    api_utils = ApiUtils(url=UniversityService.SERVICE_URL, headers={
+                         "Authorization": f"Bearer {access_token}"})
     return api_utils
 
 
@@ -60,9 +65,10 @@ def auth_service_readiness():
         try:
             response = requests.get(AuthService.SERVICE_URL + "/docs")
             response.raise_for_status()
-        except:
+        except BaseException:
             time.sleep(1)
         else:
             break
     else:
-        raise RuntimeError(f"Auth service wasn't started during {timeout} seconds.")
+        raise RuntimeError(
+            f"Auth service wasn't started during {timeout} seconds.")

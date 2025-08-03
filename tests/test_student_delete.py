@@ -16,7 +16,8 @@ class TestStudentDelete:
 
     def test_student_delete(self, university_api_utils_admin):
         Logger.info("Starting test: test_delete_student")
-        university_service = UniversityService(api_utils=university_api_utils_admin)
+        university_service = UniversityService(
+            api_utils=university_api_utils_admin)
         test_steps = Steps(university_service)
         Logger.info("Create group, step 1")
         group = GroupRequest(name=faker.name())
