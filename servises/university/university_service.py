@@ -39,12 +39,8 @@ class UniversityService(BaseService):
         return StudentResponse(**response.json())
 
     def get_student(self, student_id) -> StudentResponse | str:
-        try:
-            response = self.student_helper.get_student(student_id)
-            response.raise_for_status()
-            return StudentResponse(**response.json())
-        except HTTPError:
-            raise
+        response = self.student_helper.get_student(student_id)
+        return StudentResponse(**response.json())
 
-    def delete_student(self, student_id) -> str:
+    def delete_student(self, student_id) -> dict | str:
         self.student_helper.delete_student(student_id)

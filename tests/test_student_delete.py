@@ -8,6 +8,8 @@ from back_api.servises.university.utils.student_data_generator import StudentDat
 from back_api.servises.university.utils.steps import Steps
 from requests import HTTPError
 import requests.status_codes
+from back_api.servises.university.helpers.student_helper import StudentHelper
+from back_api.utils.api_utils import ApiUtils
 
 faker = Faker()
 
@@ -27,9 +29,6 @@ class TestStudentDelete:
         Logger.info("Delete student, step 3")
         university_service.delete_student(student_response.id)
         Logger.info("Get deleted student, step 4")
-        try:
-            university_service.get_student(student_response.id)
-            assert False, "Student was not deleted"
-        except HTTPError as e:
-            assert e.response.status_code == 404, f"Unexpected error: {e}"
-            Logger.info("Student successfully deleted and not found.")
+        helper = StudentHelper(university_api_utils_admin)
+        response = helper.get_student(student_response.id)
+        assert response.status_code == requests.status_codes.codes.not_found, f"Expected {requests.status_codes.codes.not_found}, get {response.status_code}"

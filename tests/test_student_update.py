@@ -37,4 +37,4 @@ class TestStudentUpdate:
         Logger.info("Get updated student, step 4")
         get_updated_student_by_id = university_service.get_student(
             student_id=student_update_response.id)
-        assert student_create_response != get_updated_student_by_id, "Student wasn't updated"
+        assert student_create_response != get_updated_student_by_id, f"Student wasn't updated, expected {get_updated_student_by_id} = {student_update_response}, but get {get_updated_student_by_id} = {student_create_response}"
