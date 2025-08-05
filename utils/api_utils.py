@@ -17,9 +17,10 @@ def log_response(func):
             response.text) else response.text
         Logger.info(
             f"Response status code: '{
-                response.status_code}', elapsed_time='{
-                response.elapsed}'\n{body}\n")
+            response.status_code}', elapsed_time='{
+            response.elapsed}'\n{body}\n")
         return response
+
     return _log_response
 
 

@@ -31,4 +31,6 @@ class TestStudentDelete:
         Logger.info("Get deleted student, step 4")
         helper = StudentHelper(university_api_utils_admin)
         response = helper.get_student(student_response.id)
-        assert response.status_code == requests.status_codes.codes.not_found, f"Expected {requests.status_codes.codes.not_found}, get {response.status_code}"
+        assert response.status_code == requests.status_codes.codes.not_found, f"Expected {
+        requests.status_codes.codes.not_found}, get {
+        response.status_code}"
