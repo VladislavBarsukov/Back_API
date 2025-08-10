@@ -1,11 +1,10 @@
 from back_api.servises.auth.helpers.authorization_helper import AuthorizationHelper
 from back_api.servises.auth.helpers.user_helper import UserHelper
+from back_api.servises.auth.model.login_response import LoginResponse
 from back_api.servises.auth.model.register_request import RegisterRequest
+from back_api.servises.general.base_service import BaseService
 from back_api.servises.general.models.success_response import SuccessResponse
 from back_api.utils.api_utils import ApiUtils
-
-from back_api.servises.auth.model.login_response import LoginResponse
-from back_api.servises.general.base_service import BaseService
 
 
 class AuthService(BaseService):

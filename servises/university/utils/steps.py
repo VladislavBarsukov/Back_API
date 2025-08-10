@@ -1,9 +1,7 @@
+
 from faker import Faker
-import random
-from back_api.logger.logger import Logger
+
 from back_api.servises.university.models.group_request import GroupRequest
-from back_api.servises.university.models.student_request import StudentRequest
-from back_api.servises.university.university_service import UniversityService
 from back_api.servises.university.utils.student_data_generator import StudentDataGenerator
 
 faker = Faker()

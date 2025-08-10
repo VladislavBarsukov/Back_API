@@ -1,12 +1,14 @@
 import time
+
 import pytest
-from back_api.utils.api_utils import ApiUtils
-from back_api.servises.auth.auth_service import AuthService
+import requests
 from faker import Faker
+
+from back_api.servises.auth.auth_service import AuthService
 from back_api.servises.auth.model.login_request import LoginRequest
 from back_api.servises.auth.model.register_request import RegisterRequest
 from back_api.servises.university.university_service import UniversityService
-import requests
+from back_api.utils.api_utils import ApiUtils
 
 faker = Faker()
 

@@ -1,10 +1,9 @@
-from faker import Faker
 import random
-from back_api.logger.logger import Logger
-from back_api.servises.university.models.group_request import GroupRequest
-from back_api.servises.university.models.student_request import StudentRequest
-from back_api.servises.university.university_service import UniversityService
 from enum import StrEnum
+
+from faker import Faker
+
+from back_api.servises.university.models.student_request import StudentRequest
 
 faker = Faker()
 

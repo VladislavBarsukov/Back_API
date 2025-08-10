@@ -1,8 +1,3 @@
-from back_api.servises.auth.helpers.authorization_helper import AuthorizationHelper
-from back_api.servises.auth.helpers.user_helper import UserHelper
-from back_api.servises.auth.model.register_request import RegisterRequest
-from back_api.servises.general.models.success_response import SuccessResponse
-from back_api.utils.api_utils import ApiUtils
 from back_api.servises.general.base_service import BaseService
 from back_api.servises.university.helpers.group_helper import GroupHelper
 from back_api.servises.university.helpers.student_helper import StudentHelper
@@ -10,7 +5,7 @@ from back_api.servises.university.models.group_request import GroupRequest
 from back_api.servises.university.models.group_response import GroupResponse
 from back_api.servises.university.models.student_request import StudentRequest
 from back_api.servises.university.models.student_response import StudentResponse
-from requests import HTTPError, Response
+from back_api.utils.api_utils import ApiUtils
 
 
 class UniversityService(BaseService):
@@ -38,9 +33,10 @@ class UniversityService(BaseService):
             student_id, json=student_request.model_dump())
         return StudentResponse(**response.json())
 
-    def get_student(self, student_id) -> StudentResponse | str:
+    def get_student(self, student_id) -> StudentResponse:
         response = self.student_helper.get_student(student_id)
         return StudentResponse(**response.json())
 
-    def delete_student(self, student_id) -> dict | str:
-        self.student_helper.delete_student(student_id)
+    def delete_student(self, student_id) -> dict:
+        response = self.student_helper.delete_student(student_id)
+        return response.json()

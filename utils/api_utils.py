@@ -3,8 +3,8 @@ import json
 import curlify
 from requests import Session
 
-from back_api.utils.json_utils import JsonUtils
 from back_api.logger.logger import Logger
+from back_api.utils.json_utils import JsonUtils
 
 
 def log_response(func):
