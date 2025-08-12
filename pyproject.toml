@@ -1,4 +1,4 @@
-[tool.ruff.lint]
+[tool.ruff]
 select = ["E", "W", "F", "I", "C"]
 ignore = ["E501"]
 exclude = [".venv", ".git"]
