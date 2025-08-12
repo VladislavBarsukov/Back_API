@@ -13,4 +13,4 @@ RUN unzip allure.zip -d /opt
 RUN ln -s /opt/allure-commandline-2.25.0/bin/allure /usr/local/bin/allure
 
 COPY . .
-CMD ["pytest", "-sv", "--alluredir=/app/allure-results"]
+CMD ["pytest", "-sv"]
