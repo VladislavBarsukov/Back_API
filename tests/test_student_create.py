@@ -1,4 +1,3 @@
-
 from faker import Faker
 
 from back_api.logger.logger import Logger
@@ -10,11 +9,9 @@ faker = Faker()
 
 
 class TestStudentCreate:
-
     def test_student_create(self, university_api_utils_admin):
         Logger.info("Starting test: test_creat_student")
-        university_service = UniversityService(
-            api_utils=university_api_utils_admin)
+        university_service = UniversityService(api_utils=university_api_utils_admin)
         test_steps = Steps(university_service)
 
         Logger.info("Create group, step 1")
@@ -26,7 +23,8 @@ class TestStudentCreate:
 
         Logger.info("Assert student id, step 3")
         get_student_by_id = university_service.get_student(
-            student_id=student_response.id)
+            student_id=student_response.id
+        )
         assert get_student_by_id.id == student_response.id, f"Wrong id, expected {
-        get_student_by_id.id}, get {
-        student_response.id}"
+            get_student_by_id.id
+        }, get {student_response.id}"

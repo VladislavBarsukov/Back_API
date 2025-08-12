@@ -1,4 +1,3 @@
-
 import requests.status_codes
 from faker import Faker
 
@@ -12,11 +11,9 @@ faker = Faker()
 
 
 class TestStudentDelete:
-
     def test_student_delete(self, university_api_utils_admin):
         Logger.info("Starting test: test_delete_student")
-        university_service = UniversityService(
-            api_utils=university_api_utils_admin)
+        university_service = UniversityService(api_utils=university_api_utils_admin)
         test_steps = Steps(university_service)
         Logger.info("Create group, step 1")
         group = GroupRequest(name=faker.name())
@@ -28,6 +25,8 @@ class TestStudentDelete:
         Logger.info("Get deleted student, step 4")
         helper = StudentHelper(university_api_utils_admin)
         response = helper.get_student(student_response.id)
-        assert response.status_code == requests.status_codes.codes.not_found, f"Expected {
-        requests.status_codes.codes.not_found}, get {
-        response.status_code}"
+        assert (
+            response.status_code == requests.status_codes.codes.not_found
+        ), f"Expected {requests.status_codes.codes.not_found}, get {
+            response.status_code
+        }"

@@ -17,8 +17,7 @@ class StudentHelper(BaseHelper):
         return response
 
     def put_student(self, id, json: dict) -> requests.Response:
-        response = self.api_utils.put(
-            self.TEMPLATE_ENDPOINT.format(id), json=json)
+        response = self.api_utils.put(self.TEMPLATE_ENDPOINT.format(id), json=json)
         return response
 
     def delete_student(self, id: int) -> requests.Response:

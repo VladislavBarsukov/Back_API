@@ -9,10 +9,10 @@ faker = Faker()
 
 
 class Degree(StrEnum):
-    BACHELOR = 'Bachelor'
-    ASSOCIATE = 'Associate'
-    MASTER = 'Master'
-    DOCTORATE = 'Doctorate'
+    BACHELOR = "Bachelor"
+    ASSOCIATE = "Associate"
+    MASTER = "Master"
+    DOCTORATE = "Doctorate"
 
 
 class StudentDataGenerator:
@@ -23,7 +23,8 @@ class StudentDataGenerator:
             last_name=faker.last_name(),
             email=faker.email(),
             degree=random.choice(
-                [Degree.BACHELOR, Degree.ASSOCIATE, Degree.MASTER, Degree.DOCTORATE]),
+                [Degree.BACHELOR, Degree.ASSOCIATE, Degree.MASTER, Degree.DOCTORATE]
+            ),
             phone=faker.numerify("+7##########"),
-            group_id=group_id.id
+            group_id=group_id.id,
         )
