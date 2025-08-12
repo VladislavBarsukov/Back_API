@@ -1,9 +1,8 @@
 from faker import Faker
 
 from back_api.servises.university.models.group_request import GroupRequest
-from back_api.servises.university.utils.student_data_generator import (
-    StudentDataGenerator,
-)
+from back_api.servises.university.utils.student_data_generator import \
+    StudentDataGenerator
 
 faker = Faker()
 

@@ -4,7 +4,8 @@ from back_api.servises.university.helpers.student_helper import StudentHelper
 from back_api.servises.university.models.group_request import GroupRequest
 from back_api.servises.university.models.group_response import GroupResponse
 from back_api.servises.university.models.student_request import StudentRequest
-from back_api.servises.university.models.student_response import StudentResponse
+from back_api.servises.university.models.student_response import \
+    StudentResponse
 from back_api.utils.api_utils import ApiUtils
 
 

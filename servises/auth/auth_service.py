@@ -1,4 +1,5 @@
-from back_api.servises.auth.helpers.authorization_helper import AuthorizationHelper
+from back_api.servises.auth.helpers.authorization_helper import \
+    AuthorizationHelper
 from back_api.servises.auth.helpers.user_helper import UserHelper
 from back_api.servises.auth.model.login_response import LoginResponse
 from back_api.servises.auth.model.register_request import RegisterRequest
