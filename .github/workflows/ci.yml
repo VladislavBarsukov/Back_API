@@ -9,27 +9,26 @@ env:
   PYTHON_VERSION: "3.12"
   COMPOSE_FILE: docker-compose.yml
 
-
 jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
-      - uses: docker/setup-buildx-action@v1
         with:
-          python-version: "3.12"
+          python-version: "${{ env.PYTHON_VERSION }}"
+      - uses: docker/setup-docker-compose-action@v2
       - run: python -m pip install --upgrade pip
       - run: pip install ruff
       - run: ruff check . --output-format=github
-
-      - run: docker-compose -f ${{env.COMPOSE_FILE}} up -d
+      - run: docker-compose -f ${{ env.COMPOSE_FILE }} up -d
         working-directory: .
       - run: sleep 20
       - run: docker build -t test-image:latest .
+      - run: |
+          docker run --rm \
+            --network host \
+            -v $(pwd):/app \
+            --workdir /app \
+            test-image:latest
 
-      - run: docker run --rm \
-          --network host  \
-          -v $(pwd):/app \
-          --workdir /app \
-          your_test_image:latest
