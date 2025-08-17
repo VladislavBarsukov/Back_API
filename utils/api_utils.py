@@ -17,9 +17,7 @@ def log_response(func):
             else response.text
         )
         Logger.info(
-            f"Response status code: '{response.status_code}', elapsed_time='{
-                response.elapsed
-            }'\n{body}\n"
+            f"Response status code: '{response.status_code}', elapsed_time='{response.elapsed}'\n{body}\n"
         )
         return response
 
@@ -46,7 +44,8 @@ class ApiUtils:
 
     @log_response
     def post(self, endpoint_url, data=None, json=None, **kwargs):
-        response = self.session.post(self.url + endpoint_url, data, json, **kwargs)
+        response = self.session.post(
+            self.url + endpoint_url, data, json, **kwargs)
         return response
 
     @log_response

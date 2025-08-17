@@ -1,16 +1,10 @@
-FROM python:3.12-slim
+FROM python:3.11-slim
 
-WORKDIR /app
+WORKDIR /back_api
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install --no-cache-dir allure-pytest
+RUN pip install --upgrade --no-cache-dir -r requirements.txt
 
-RUN apt-get update
-RUN apt-get install -y wget unzip
-RUN wget https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.25.0/allure-commandline-2.25.0.zip -O allure.zip
-RUN unzip allure.zip -d /opt
-RUN ln -s /opt/allure-commandline-2.25.0/bin/allure /usr/local/bin/allure
+COPY . /back_api
 
-COPY . .
 CMD ["pytest", "-sv"]

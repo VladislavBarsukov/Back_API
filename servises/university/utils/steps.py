@@ -18,6 +18,8 @@ class Steps:
         return response
 
     def create_student(self, group_id):
-        student_data = StudentDataGenerator.generate_student_data(group_id=group_id)
-        response = self.university_service.create_student(student_request=student_data)
+        student_data = StudentDataGenerator.generate_student_data(
+            group_id=group_id)
+        response = self.university_service.create_student(
+            student_request=student_data)
         return response

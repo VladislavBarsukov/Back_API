@@ -23,7 +23,8 @@ class StudentDataGenerator:
             last_name=faker.last_name(),
             email=faker.email(),
             degree=random.choice(
-                [Degree.BACHELOR, Degree.ASSOCIATE, Degree.MASTER, Degree.DOCTORATE]
+                [Degree.BACHELOR, Degree.ASSOCIATE,
+                    Degree.MASTER, Degree.DOCTORATE]
             ),
             phone=faker.numerify("+7##########"),
             group_id=group_id.id,

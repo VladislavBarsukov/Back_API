@@ -49,7 +49,8 @@ def access_token(auth_api_utils_anonym):
 @pytest.fixture(scope="function", autouse=False)
 def auth_api_utils_admin(access_token):
     api_utils = ApiUtils(
-        url=AuthService.SERVICE_URL, headers={"Authorization": f"Bearer {access_token}"}
+        url=AuthService.SERVICE_URL, headers={
+            "Authorization": f"Bearer {access_token}"}
     )
     return api_utils
 
@@ -76,4 +77,5 @@ def auth_service_readiness():
         else:
             break
     else:
-        raise RuntimeError(f"Auth service wasn't started during {timeout} seconds.")
+        raise RuntimeError(
+            f"Auth service wasn't started during {timeout} seconds.")

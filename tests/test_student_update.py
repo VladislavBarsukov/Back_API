@@ -14,7 +14,8 @@ faker = Faker()
 class TestStudentUpdate:
     def test_update_created_student(self, university_api_utils_admin):
         Logger.info("Starting test: test_update_created_student")
-        university_service = UniversityService(api_utils=university_api_utils_admin)
+        university_service = UniversityService(
+            api_utils=university_api_utils_admin)
         test_steps = Steps(university_service)
 
         Logger.info("Create group, step 1")
@@ -22,7 +23,8 @@ class TestStudentUpdate:
         group_response = university_service.create_group(group_request=group)
 
         Logger.info("Create student, step 2")
-        student_create_response = test_steps.create_student(group_id=group_response)
+        student_create_response = test_steps.create_student(
+            group_id=group_response)
 
         Logger.info("Update created student, step 3")
         group = GroupRequest(name=faker.name())

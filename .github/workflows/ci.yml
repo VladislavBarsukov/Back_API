@@ -7,6 +7,8 @@ on:
     branches: [main, develop]
 env:
   PYTHON_VERSION: "3.12"
+  COMPOSE_FILE: docker-compose.yml
+
 
 jobs:
   ci:
@@ -17,6 +19,16 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m pip install --upgrade pip
-      - run: pip install ruff
+      - run: pip install ruff docker-compose
       - run: ruff format --check .
       - run: ruff check . --output-format=github
+      - run: docker-compose -f ${{env.COMPOSE_FILE}} up -d
+        working-directory: .
+      - run: sleep 20
+      - run: docker build -t test-image:latest .
+
+      - run: docker run --rm \
+          --network host  \
+          -v $(pwd):/app \
+          --workdir /app \
+          your_test_image:latest
