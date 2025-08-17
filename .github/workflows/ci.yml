@@ -15,14 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
-        with:
-          python-version: "${{ env.PYTHON_VERSION }}"
       - uses: docker/setup-buildx-action@v1
       - run: python -m pip install --upgrade pip
       - run: pip install ruff
       - run: ruff check . --output-format=github
+
       - run: docker-compose -f ${{ env.COMPOSE_FILE }} up -d
-        working-directory: .
+
       - run: sleep 20
       - run: docker build -t test-image:latest .
       - run: |
@@ -31,6 +30,7 @@ jobs:
             -v $(pwd):/app \
             --workdir /app \
             test-image:latest
+
 
 
 
