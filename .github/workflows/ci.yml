@@ -9,25 +9,46 @@ env:
   PYTHON_VERSION: "3.12"
   COMPOSE_FILE: docker-compose.yml
 
-
 jobs:
   ci:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
       - uses: docker/setup-buildx-action@v1
         with:
           python-version: "3.12"
+
       - run: python -m pip install --upgrade pip
+      - run: pip install -r requirements.txt
       - run: pip install ruff
       - run: ruff check . --output-format=github
 
+<<<<<<< HEAD
       - run: docker-compose -f ${{env.COMPOSE_FILE}} up -d
         working-directory: .
+=======
+      - run: docker compose up
+
+>>>>>>> 5665f4c57db464f83e01bf8d60f7c4a700bee294
       - run: sleep 20
       - run: docker build -t test-image:latest .
+      - run: |
+          docker run --rm \
+            --network host \
+            -v $(pwd):/app \
+            --workdir /app \
+            test-image:latest
 
+
+
+
+
+
+
+
+<<<<<<< HEAD
       - run: docker run --rm \
           --network host  \
           -v $(pwd):/app \
@@ -35,3 +56,5 @@ jobs:
           your_test_image:latest
 
         
+=======
+>>>>>>> 5665f4c57db464f83e01bf8d60f7c4a700bee294
