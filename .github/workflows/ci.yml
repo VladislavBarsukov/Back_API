@@ -45,6 +45,7 @@ jobs:
           -v "$(pwd)/allure-report:$(pwd)/allure-report" \
           -w "$(pwd)" \
           --env-file .env \
+          -e PYTHONPATH=$(pwd) \
           test-image:latest \
           sh -c "pytest -sv --alluredir=allure-results && allure generate allure-results -o allure-report --clean"
 
