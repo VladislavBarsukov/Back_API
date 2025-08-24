@@ -1,5 +1,6 @@
 version: "3.9"
 
+
 services:
   postgres_auth:
     image: postgres:17
