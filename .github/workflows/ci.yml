@@ -24,10 +24,7 @@ jobs:
       - run: pip install -r requirements.txt
       - run: pip install ruff
       - run: ruff check . --output-format=github
-
-      - run: docker compose -f ${{env.COMPOSE_FILE}} up -d
-        working-directory: .
-      - run: docker compose up
+      - run: docker compose up -d
 
       - run: sleep 20
       - run: docker build -t test-image:latest .
