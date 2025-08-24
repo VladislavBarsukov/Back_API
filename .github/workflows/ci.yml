@@ -41,8 +41,9 @@ jobs:
       - run: |
           docker run --rm \
           --network host \
-          -v $(pwd):/app \
-          --workdir /app \
+          -v "$(pwd):$(pwd)" \
+          -v "$(pwd)/allure-report:$(pwd)/allure-report" \
+          -w "$(pwd)" \
           --env-file .env \
           test-image:latest \
           sh -c "pytest -sv --alluredir=allure-results && allure generate allure-results -o allure-report --clean"
