@@ -13,5 +13,6 @@ RUN wget -O /tmp/allure.zip https://github.com/allure-framework/allure2/releases
     rm /tmp/allure.zip
 
 COPY . /back_api
+ENV PYTHONPATH=/back_api
 
 CMD ["pytest", "-sv", "--alluredir=allure-results"]
