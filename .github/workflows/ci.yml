@@ -25,7 +25,7 @@ jobs:
       - run: pip install ruff
       - run: ruff check . --output-format=github
 
-      - run: docker-compose -f ${{env.COMPOSE_FILE}} up -d
+      - run: docker compose -f ${{env.COMPOSE_FILE}} up -d
         working-directory: .
       - run: docker compose up
 
