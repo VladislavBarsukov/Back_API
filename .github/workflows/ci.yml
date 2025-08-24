@@ -25,13 +25,10 @@ jobs:
       - run: pip install ruff
       - run: ruff check . --output-format=github
 
-<<<<<<< HEAD
       - run: docker-compose -f ${{env.COMPOSE_FILE}} up -d
         working-directory: .
-=======
       - run: docker compose up
 
->>>>>>> 5665f4c57db464f83e01bf8d60f7c4a700bee294
       - run: sleep 20
       - run: docker build -t test-image:latest .
       - run: |
@@ -40,8 +37,6 @@ jobs:
             -v $(pwd):/app \
             --workdir /app \
             test-image:latest
-
-
 
 
 
