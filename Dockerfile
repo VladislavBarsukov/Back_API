@@ -1,6 +1,6 @@
 FROM python:3.12-bullseye
 
-WORKDIR /back_api
+WORKDIR /app
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -11,8 +11,9 @@ RUN wget -O /tmp/allure.zip https://github.com/allure-framework/allure2/releases
     unzip /tmp/allure.zip -d /opt/ && \
     ln -s /opt/allure-2.24.0/bin/allure /usr/local/bin/allure && \
     rm /tmp/allure.zip
+WORKDIR /
 
-COPY . /back_api
-ENV PYTHONPATH=/back_api
+COPY . .
+ENV PYTHONPATH=/app
 
 CMD ["pytest", "-sv", "--alluredir=allure-results"]
