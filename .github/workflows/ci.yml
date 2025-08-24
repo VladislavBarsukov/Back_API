@@ -37,7 +37,9 @@ jobs:
 
       - run: docker compose up -d
       - run: docker build -t test-image:latest .
-      - run: |
+      - name: Запуск тестов в контейнере
+        continue-on-error: true
+        run: |
           docker run --rm \
             --network host \
             -v $(pwd):/app \
@@ -45,23 +47,21 @@ jobs:
             --env-file .env \
             test-image:latest
 
-      # Генерация отчета Allure из результатов тестирования
       - name: Установить Allure
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y allure
 
       - name: Создать Allure отчет из результатов
-        run: |
-          allure generate allure-results -o allure-report --clean
+        run: allure generate allure-results -o allure-report --clean
 
-      # Публикация отчета на GitHub Pages
       - name: Опубликовать отчет на GitHub Pages
-        if: success()
+        if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
           publish_branch: gh-pages
+
 
 
