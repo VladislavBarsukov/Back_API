@@ -23,6 +23,7 @@ jobs:
       - run: python -m pip install --upgrade pip
       - run: pip install -r requirements.txt
       - run: pip install ruff
+
       - run: ruff check . --output-format=github
 
       - run: |
@@ -37,25 +38,33 @@ jobs:
 
       - run: docker compose up -d
       - run: docker build -t test-image:latest .
-      - name: Запуск тестов в контейнере
-        continue-on-error: true
+
+      # Установка Allure CLI
+      - name: Установить Allure CLI
+        run: |
+          wget -O allure.zip https://github.com/allure-framework/allure2/releases/download/2.24.0/allure-2.24.0.zip
+          unzip -o allure.zip -d /opt/
+          sudo ln -s /opt/allure-2.24.0/bin/allure /usr/local/bin/allure
+          allure --version
+
+      # Запуск тестов внутри контейнера (предположим, что ваши тесты генерируют allure-results)
+      - name: Запуск тестов
         run: |
           docker run --rm \
             --network host \
             -v $(pwd):/app \
             --workdir /app \
             --env-file .env \
-            test-image:latest
+            test-image:latest \
+            /bin/bash -c "pytest --alluredir=allure-results" # или ваша команда запуска тестов
 
-      - name: Установить Allure
+      # Генерация отчета Allure
+      - name: Генерация отчета Allure
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y allure
+          allure generate allure-results -o allure-report --clean
 
-      - name: Создать Allure отчет из результатов
-        run: allure generate allure-results -o allure-report --clean
-
-      - name: Опубликовать отчет на GitHub Pages
+      # Публикация отчета, даже при ошибках
+      - name: Публикация отчета
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
