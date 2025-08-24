@@ -37,19 +37,3 @@ jobs:
             -v $(pwd):/app \
             --workdir /app \
             test-image:latest
-
-
-
-
-
-
-<<<<<<< HEAD
-      - run: docker run --rm \
-          --network host  \
-          -v $(pwd):/app \
-          --workdir /app \
-          your_test_image:latest
-
-        
-=======
->>>>>>> 5665f4c57db464f83e01bf8d60f7c4a700bee294
