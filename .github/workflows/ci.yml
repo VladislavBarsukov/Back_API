@@ -1,30 +1,60 @@
-name: CI/CD Pipeline
+name: CI Workflow
 
 on:
   push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main, develop]
-env:
-  PYTHON_VERSION: "3.12"
-  COMPOSE_FILE: docker-compose.yml
+    branches:
+      - main
 
 jobs:
-  ci:
+  build:
     runs-on: ubuntu-latest
-    
+
+    env:
+      PYTHON_VERSION: "3.12"
+      COMPOSE_FILE: docker-compose.yml
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
       - uses: docker/setup-buildx-action@v1
         with:
-          python-version: "3.12"
+          python-version: ${{ env.PYTHON_VERSION }}
 
       - run: python -m pip install --upgrade pip
       - run: pip install -r requirements.txt
       - run: pip install ruff
       - run: ruff check . --output-format=github
-      - run: docker compose up -d
+
+      - name: Generate secrets
+        id: gen_secrets
+        run: |
+          POSTGRES_USER=$(head /dev/urandom | tr -dc A-Za-z | head -c 8)
+          POSTGRES_PASSWORD=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16)
+          echo "POSTGRES_USER=$POSTGRES_USER" >> $GITHUB_ENV
+          echo "POSTGRES_PASSWORD=$POSTGRES_PASSWORD" >> $GITHUB_ENV
+          echo "POSTGRES_DB_AUTH=auth" >> $GITHUB_ENV
+          echo "POSTGRES_DB_UNIVERSITY=university" >> $GITHUB_ENV
+          echo "AUTH_SERVICE_INTERNAL_URL=http://auth:8000" >> $GITHUB_ENV
+          echo "AUTH_SERVICE_API_URL=http://127.0.0.1:8000" >> $GITHUB_ENV
+          echo "UNIVERSITY_SERVICE_INTERNAL_URL=http://university:8000" >> $GITHUB_ENV
+          echo "UNIVERSITY_SERVICE_API_URL=http://127.0.0.1:8001" >> $GITHUB_ENV
+
+      - name: Run Docker Compose
+        run: |
+          docker compose up -d
+        env:
+          POSTGRES_USER: ${{ env.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
+          POSTGRES_DB_AUTH: ${{ env.POSTGRES_DB_AUTH }}
+          POSTGRES_DB_UNIVERSITY: ${{ env.POSTGRES_DB_UNIVERSITY }}
+          AUTH_SERVICE_INTERNAL_URL: ${{ env.AUTH_SERVICE_INTERNAL_URL }}
+          AUTH_SERVICE_API_URL: ${{ env.AUTH_SERVICE_API_URL }}
+          UNIVERSITY_SERVICE_INTERNAL_URL: ${{ env.UNIVERSITY_SERVICE_INTERNAL_URL }}
+          UNIVERSITY_SERVICE_API_URL: ${{ env.UNIVERSITY_SERVICE_API_URL }}
 
       - run: sleep 20
       - run: docker build -t test-image:latest .
