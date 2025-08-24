@@ -25,8 +25,7 @@ jobs:
       - run: pip install ruff
       - run: ruff check . --output-format=github
 
-      - name: Создать .env файл
-        run: |
+      - run: |
           echo "POSTGRES_USER=$(head /dev/urandom | tr -dc A-Za-z | head -c 8)" > .env
           echo "POSTGRES_PASSWORD=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16)" >> .env
           echo "POSTGRES_DB_AUTH=auth" >> .env
@@ -45,5 +44,24 @@ jobs:
             --workdir /app \
             --env-file .env \
             test-image:latest
+
+      # Генерация отчета Allure из результатов тестирования
+      - name: Установить Allure
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y allure
+
+      - name: Создать Allure отчет из результатов
+        run: |
+          allure generate allure-results -o allure-report --clean
+
+      # Публикация отчета на GitHub Pages
+      - name: Опубликовать отчет на GitHub Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+          publish_branch: gh-pages
 
 
