@@ -23,5 +23,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копирование проекта
 COPY . .
 
-# Команда по умолчанию для запуска тестов
 CMD ["pytest", "-sv", "--alluredir=allure-results"]
