@@ -43,4 +43,12 @@ jobs:
           --network host \
           --env-file .env \
           test-image:latest \
-
+          -c "allure generate allure-results --clean -o allure-report"\
+          
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          token: ${{ secrets.CI_TOKEN }}
+          branch: gh-pages
+          folder: allure-report
+          clean: true
