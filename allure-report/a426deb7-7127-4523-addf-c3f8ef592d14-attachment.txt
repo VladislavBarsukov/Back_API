@@ -1,0 +1,27 @@
+[32mINFO    [0m Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 151' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=hbaker&password=%2B%24TJT%28OyNJclyATFuxCxJ0jRbh4CM4&password_repeat=%2B%24TJT%28OyNJclyATFuxCxJ0jRbh4CM4&email=rodriguezjessica%40example.com' http://127.0.0.1:8000/auth/register/
+[32mINFO    [0m Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.248311'
+{
+  "detail": "User registered"
+}
+
+[32mINFO    [0m Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 61' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=hbaker&password=%2B%24TJT%28OyNJclyATFuxCxJ0jRbh4CM4' http://127.0.0.1:8000/auth/login/
+[32mINFO    [0m Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.280030'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMxLCJ1c2VybmFtZSI6ImhiYWtlciIsImV4cCI6MTc1NjA4NjYwMCwiaWF0IjoxNzU2MDc5NDAwfQ.bDd2mizYtHuiSIluEKA7nRmAI9Qc6d3MuilfBeefSkGLoqjWa6RKmmd0NefMBc5liCl12KTqUj7PNbybrUNB0-A7d3Ov4aa6H8_fl_YKAoEWn1MBH8017O8nmv37qOFL215nbkpgrBQmDMYAYP_DN5F-uWiRI77EblWukqgrJ002bQkbRNj9d5RR9sNYF4hrq2OR4WRr2l7ZLFra7719WAa2c2LiqbmI6VJIbAy2Fnoqdatw0nDBGiv8sYDp3f3taVB49AfZSOr1WRAs8SviCoclzi472xjtQbXTfh6ZtK2SN5WQcq6PkBTiSJyOtejod8XqQaCbwKo4kAHmmhTJHA",
+  "token_type": "Bearer"
+}
+[32mINFO    [0m Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMxLCJ1c2VybmFtZSI6ImhiYWtlciIsImV4cCI6MTc1NjA4NjYwMCwiaWF0IjoxNzU2MDc5NDAwfQ.bDd2mizYtHuiSIluEKA7nRmAI9Qc6d3MuilfBeefSkGLoqjWa6RKmmd0NefMBc5liCl12KTqUj7PNbybrUNB0-A7d3Ov4aa6H8_fl_YKAoEWn1MBH8017O8nmv37qOFL215nbkpgrBQmDMYAYP_DN5F-uWiRI77EblWukqgrJ002bQkbRNj9d5RR9sNYF4hrq2OR4WRr2l7ZLFra7719WAa2c2LiqbmI6VJIbAy2Fnoqdatw0nDBGiv8sYDp3f3taVB49AfZSOr1WRAs8SviCoclzi472xjtQbXTfh6ZtK2SN5WQcq6PkBTiSJyOtejod8XqQaCbwKo4kAHmmhTJHA' -H 'Content-Length: 14' -H 'Content-Type: application/json' -d '{"name": null}' http://127.0.0.1:8001/groups/
+[32mINFO    [0m Logger:logger.py:33 Response status code: '422', elapsed_time='0:00:00.010490'
+{
+  "detail": [
+    {
+      "type": "string_type",
+      "loc": [
+        "body",
+        "name"
+      ],
+      "msg": "Input should be a valid string",
+      "input": null
+    }
+  ]
+}
