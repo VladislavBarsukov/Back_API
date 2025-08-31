@@ -44,5 +44,3 @@ jobs:
           --env-file .env \
           test-image:latest \
 
-
-
