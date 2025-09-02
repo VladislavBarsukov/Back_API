@@ -1,0 +1,24 @@
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 156' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=travistim&password=K9ziM9ts%5E%2BBQHENX%29EjO%29u%2851Z8QaA&password_repeat=K9ziM9ts%5E%2BBQHENX%29EjO%29u%2851Z8QaA&email=evanscarol%40example.com' http://127.0.0.1:8000/auth/register/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.273286'
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 68' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=travistim&password=K9ziM9ts%5E%2BBQHENX%29EjO%29u%2851Z8QaA' http://127.0.0.1:8000/auth/login/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.313437'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoidHJhdmlzdGltIiwiZXhwIjoxNzU2ODU2MTY0LCJpYXQiOjE3NTY4NDg5NjR9.m3tnTpLmL-xNjwCdlvI_Jfzd7foW-S80y-AKdYFxellQcDeninB2qv_jKraBL38m2lH0VmhU-8aU2f4Vd2p1_ghyYHqqfb7v5y81LPpNSbQ_mfKOWrUj1atH-lP2BrlN_5j3Dt_qsPmN-wUIsef1Eu05gJG6XBS9QyVtJ-7qSafxfoZIkMoS-hfUU-lw6Es0nqTAKPxBDRCcoz3elRyPW7IZCvq-vREXnXKKlaaQswqOK7HpmjHXt6Lwf8Gm-1abQN0zCLRk8YT4vu-ZPRd2lJZEDId4OU1G-DPHwSzfKlNB7ZaWuxf2pBte2NbHEHKfwXOk3ingd6Cl19a478od-w",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoidHJhdmlzdGltIiwiZXhwIjoxNzU2ODU2MTY0LCJpYXQiOjE3NTY4NDg5NjR9.m3tnTpLmL-xNjwCdlvI_Jfzd7foW-S80y-AKdYFxellQcDeninB2qv_jKraBL38m2lH0VmhU-8aU2f4Vd2p1_ghyYHqqfb7v5y81LPpNSbQ_mfKOWrUj1atH-lP2BrlN_5j3Dt_qsPmN-wUIsef1Eu05gJG6XBS9QyVtJ-7qSafxfoZIkMoS-hfUU-lw6Es0nqTAKPxBDRCcoz3elRyPW7IZCvq-vREXnXKKlaaQswqOK7HpmjHXt6Lwf8Gm-1abQN0zCLRk8YT4vu-ZPRd2lJZEDId4OU1G-DPHwSzfKlNB7ZaWuxf2pBte2NbHEHKfwXOk3ingd6Cl19a478od-w' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.009075'
+[
+  {
+    "name": "Kristy Long",
+    "id": 1
+  },
+  {
+    "name": "Derek Knox",
+    "id": 2
+  }
+]
