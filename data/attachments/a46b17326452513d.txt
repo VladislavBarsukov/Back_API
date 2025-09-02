@@ -1,0 +1,24 @@
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 158' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=michellebailey&password=9IYX%2458%2Bme0dCyN%29n80d%25bEv1IsdJu&password_repeat=9IYX%2458%2Bme0dCyN%29n80d%25bEv1IsdJu&email=barbarareid%40example.org' http://127.0.0.1:8000/auth/register/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.272771'
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 71' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=michellebailey&password=9IYX%2458%2Bme0dCyN%29n80d%25bEv1IsdJu' http://127.0.0.1:8000/auth/login/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.312385'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoibWljaGVsbGViYWlsZXkiLCJleHAiOjE3NTY4NTYxNjIsImlhdCI6MTc1Njg0ODk2Mn0.Ox-l2z1Y9w-YDFddIndOZ_LeA4kNVi4-kkekKgBcWc1yJeSDvyvvG9pJ7OkrIcFVB-a-vl1NLlanjmKaBe6DYgV9HUW0W2rh_ElI5a0vScuJVTRCVLoa7t9cx5v0ImBlRnTrMXTw-cZWmLOVxuOVEMruKcLjFp1FRSb8RIXbMNNoy11DtH-c7inG__mn76X-2WA1odRQ_cCOfy1jxJxTlV6IEgJ4-POw-OnBjznGm4vwnPmBLG2N8J-dgjLtEcTzrgFHThsK8rbFe-q0EUR9jiFWZbrq6ut_M2hdniasZRgTqCOxDYY8p4TmZLaRYw1ouktuIeTmoVLSzpYhzYpCaA",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoibWljaGVsbGViYWlsZXkiLCJleHAiOjE3NTY4NTYxNjIsImlhdCI6MTc1Njg0ODk2Mn0.Ox-l2z1Y9w-YDFddIndOZ_LeA4kNVi4-kkekKgBcWc1yJeSDvyvvG9pJ7OkrIcFVB-a-vl1NLlanjmKaBe6DYgV9HUW0W2rh_ElI5a0vScuJVTRCVLoa7t9cx5v0ImBlRnTrMXTw-cZWmLOVxuOVEMruKcLjFp1FRSb8RIXbMNNoy11DtH-c7inG__mn76X-2WA1odRQ_cCOfy1jxJxTlV6IEgJ4-POw-OnBjznGm4vwnPmBLG2N8J-dgjLtEcTzrgFHThsK8rbFe-q0EUR9jiFWZbrq6ut_M2hdniasZRgTqCOxDYY8p4TmZLaRYw1ouktuIeTmoVLSzpYhzYpCaA' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.009552'
+[
+  {
+    "name": "Connor Bridges",
+    "id": 1
+  },
+  {
+    "name": "Ashley Torres",
+    "id": 2
+  }
+]
