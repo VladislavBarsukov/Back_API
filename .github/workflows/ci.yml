@@ -39,9 +39,12 @@ jobs:
 
       - run: docker build -t test-image:latest .
 
-      - run: |
-          sudo apt-get update
-          sudo apt-get install -y allure  
+      - name: Install Allure
+        run: |
+            wget -O /tmp/allure.zip -L https://github.com/allure-framework/allure2/releases/download/2.34.1/allure-2.34.1.zip && \
+            unzip /tmp/allure.zip -d /opt/ && \
+            sudo ln -s /opt/allure-2.34.1/bin/allure /usr/local/bin/allure
+            echo "::add-path::/usr/local/bin"
 
       - run: |
           docker run --rm \
@@ -51,7 +54,7 @@ jobs:
             test-image:latest || true
           
       - run: |
-          allure generate allure-results -o allure-report --clean || true
+          allure generate allure-results -o allure-report --clean
           
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
