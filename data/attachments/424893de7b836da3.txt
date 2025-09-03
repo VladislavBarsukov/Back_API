@@ -1,0 +1,24 @@
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 173' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=christopherrobinson&password=%26os0Vb2%40iLPD%40dD%2BxklkWa%2AM%28E%2A3_L&password_repeat=%26os0Vb2%40iLPD%40dD%2BxklkWa%2AM%28E%2A3_L&email=jeffrey59%40example.net' http://127.0.0.1:8000/auth/register/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.273431'
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 82' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=christopherrobinson&password=%26os0Vb2%40iLPD%40dD%2BxklkWa%2AM%28E%2A3_L' http://127.0.0.1:8000/auth/login/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.313094'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiY2hyaXN0b3BoZXJyb2JpbnNvbiIsImV4cCI6MTc1Njk0MTY1MSwiaWF0IjoxNzU2OTM0NDUxfQ.O9rTTK8GulAMQk-CHs1h8DRVavuQmLqGw_wRtlA-G5ihhNzMJI3FfJPWzQBVD0yP87cOHVjZnRi2OTp08gG1iTMPWuJ3fRQsFLDTugkrVJtYqcOfuP0oBfnYkjxwigIpjHWfOMHnLPyL2AIaVpKzW4anbOxJ8JlTKZTEvX0ZXlt8qT3bpdrby_oeRPBA7CN58t1mCwyeqc153iiuDNt4gV8pFFEWpcHnGOWEvSiPxmI4NibFWBttkD6FdZQb6y-AVUIHSkl-z9yWZ9qRByukFCTFzS_HSNNhgES1sdOWJ4QXojXQwe_hAwswzKL1aB4KsDkR4bHi7EhZ9ROLOL2r7Q",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiY2hyaXN0b3BoZXJyb2JpbnNvbiIsImV4cCI6MTc1Njk0MTY1MSwiaWF0IjoxNzU2OTM0NDUxfQ.O9rTTK8GulAMQk-CHs1h8DRVavuQmLqGw_wRtlA-G5ihhNzMJI3FfJPWzQBVD0yP87cOHVjZnRi2OTp08gG1iTMPWuJ3fRQsFLDTugkrVJtYqcOfuP0oBfnYkjxwigIpjHWfOMHnLPyL2AIaVpKzW4anbOxJ8JlTKZTEvX0ZXlt8qT3bpdrby_oeRPBA7CN58t1mCwyeqc153iiuDNt4gV8pFFEWpcHnGOWEvSiPxmI4NibFWBttkD6FdZQb6y-AVUIHSkl-z9yWZ9qRByukFCTFzS_HSNNhgES1sdOWJ4QXojXQwe_hAwswzKL1aB4KsDkR4bHi7EhZ9ROLOL2r7Q' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.009160'
+[
+  {
+    "name": "Robert Williams",
+    "id": 1
+  },
+  {
+    "name": "Charles Kelly",
+    "id": 2
+  }
+]
