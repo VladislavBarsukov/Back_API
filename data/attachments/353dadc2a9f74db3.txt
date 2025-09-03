@@ -1,0 +1,24 @@
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 149' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=alyssaduke&password=pL%29%24zQlwe_3YbXW6y%29T_NXXIpdy38D&password_repeat=pL%29%24zQlwe_3YbXW6y%29T_NXXIpdy38D&email=cainjoshua%40example.net' http://127.0.0.1:8000/auth/register/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.271595'
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 65' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=alyssaduke&password=pL%29%24zQlwe_3YbXW6y%29T_NXXIpdy38D' http://127.0.0.1:8000/auth/login/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.313399'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiYWx5c3NhZHVrZSIsImV4cCI6MTc1Njk0MTY1MCwiaWF0IjoxNzU2OTM0NDUwfQ.Srj61Sd7rVH_r2XzSsPw9Dejy2o_fI-Bh1a0IuADa92-hVE_crUdtwRch4lPMF-CaGgK4CP0bCHZq83syprleq9lyoZfgvGsTUKT_1H8aQSxIW5NRyDYpUB2JcagT4flblC0o_V2mcgTiLyN-2luytkt8_Ix8Zo2s3rEBniwzDkodn6B3JtFAxsIe7zyNtM3x15xvLzKmjls2W0zuhVNh0XVGHeIOKge9SqVI3_jSph0j8Gbzd-fOM9f8jhXmOkP9oxVgSWMYbY-mCfHpbasMBiFVaFWFmmmOy4zwlDBm4bd7IwWoNYgsn8o02UruAFFfR4CrcTcp7N_qQotA_ZSBg",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiYWx5c3NhZHVrZSIsImV4cCI6MTc1Njk0MTY1MCwiaWF0IjoxNzU2OTM0NDUwfQ.Srj61Sd7rVH_r2XzSsPw9Dejy2o_fI-Bh1a0IuADa92-hVE_crUdtwRch4lPMF-CaGgK4CP0bCHZq83syprleq9lyoZfgvGsTUKT_1H8aQSxIW5NRyDYpUB2JcagT4flblC0o_V2mcgTiLyN-2luytkt8_Ix8Zo2s3rEBniwzDkodn6B3JtFAxsIe7zyNtM3x15xvLzKmjls2W0zuhVNh0XVGHeIOKge9SqVI3_jSph0j8Gbzd-fOM9f8jhXmOkP9oxVgSWMYbY-mCfHpbasMBiFVaFWFmmmOy4zwlDBm4bd7IwWoNYgsn8o02UruAFFfR4CrcTcp7N_qQotA_ZSBg' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.007874'
+[
+  {
+    "name": "Stephen Gibson",
+    "id": 1
+  },
+  {
+    "name": "Megan Wiley",
+    "id": 2
+  }
+]

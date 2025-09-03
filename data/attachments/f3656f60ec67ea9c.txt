@@ -1,0 +1,18 @@
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 172' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=evanskaitlyn&password=%213vMHANi%5E%2A%21%40SrXqJyl%28Eisa%28RANAg&password_repeat=%213vMHANi%5E%2A%21%40SrXqJyl%28Eisa%28RANAg&email=summerrodriguez%40example.org' http://127.0.0.1:8000/auth/register/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.297392'
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 75' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=evanskaitlyn&password=%213vMHANi%5E%2A%21%40SrXqJyl%28Eisa%28RANAg' http://127.0.0.1:8000/auth/login/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.315081'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiZXZhbnNrYWl0bHluIiwiZXhwIjoxNzU2OTQxNjQ4LCJpYXQiOjE3NTY5MzQ0NDh9.keN7sg8-2liK172sFEpigSNOo6ERIhuGeN4O9Q_jbTwsT-tWw1ywF92PGCt5TH71nQadFis8gIhCBPHlmxyz7bZMoamzxrYSQ7cZCRIAyUn0-aeulzxkhuqADPTCAlFJCjXH3W_KVtt9qTBRy2HLCP4_UDUbzd24FI8WBskg7DNANvsZf_MXn88yEbENTUzLdtEPTlBFoPzBP4vizu-AOaXVQpmBBZp77F8m80g0n5AJEPZI7H_Z9Ji_524M9HkmovrKQdFJwjc4xRe5eEgyB0pkYeu3HysrEBNDErhzXAAkT9AKdthhFFgdRU6DweDjN0ZHzqjPjfdEgPmpCd4HSQ",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiZXZhbnNrYWl0bHluIiwiZXhwIjoxNzU2OTQxNjQ4LCJpYXQiOjE3NTY5MzQ0NDh9.keN7sg8-2liK172sFEpigSNOo6ERIhuGeN4O9Q_jbTwsT-tWw1ywF92PGCt5TH71nQadFis8gIhCBPHlmxyz7bZMoamzxrYSQ7cZCRIAyUn0-aeulzxkhuqADPTCAlFJCjXH3W_KVtt9qTBRy2HLCP4_UDUbzd24FI8WBskg7DNANvsZf_MXn88yEbENTUzLdtEPTlBFoPzBP4vizu-AOaXVQpmBBZp77F8m80g0n5AJEPZI7H_Z9Ji_524M9HkmovrKQdFJwjc4xRe5eEgyB0pkYeu3HysrEBNDErhzXAAkT9AKdthhFFgdRU6DweDjN0ZHzqjPjfdEgPmpCd4HSQ' -H 'Content-Length: 26' -H 'Content-Type: application/json' -d '{"name": "Stephen Gibson"}' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.031703'
+{
+  "name": "Stephen Gibson",
+  "id": 1
+}
