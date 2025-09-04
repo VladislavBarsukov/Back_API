@@ -65,6 +65,11 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - uses: docker/setup-buildx-action@v1
+      - name: Download allure-results artifacts
+        uses: actions/download-artifact@v5
+        with:
+            name: allure-results
+            path: ./allure-results
       - name: Install Allure
         run: |
           wget -O /tmp/allure.zip -L https://github.com/allure-framework/allure2/releases/download/2.34.1/allure-2.34.1.zip
