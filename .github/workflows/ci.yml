@@ -56,6 +56,31 @@ jobs:
             -v $(pwd)/allure-results:/back_api/allure-results \
             test-image:latest || true
 
+      - run: sleep 30
+
+      - run: ls -lah ./allure-results || echo "allure-results пустая"
+
+      - name: Upload allure-results
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: ./allure-results
+
+  allure:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Download allure-results
+        uses: actions/download-artifact@v5
+        with:
+          name: allure-results
+          path: ./allure-results
+
       - name: Install Allure
         run: |
           wget -O /tmp/allure.zip -L https://github.com/allure-framework/allure2/releases/download/2.34.1/allure-2.34.1.zip
