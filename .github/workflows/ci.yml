@@ -1,0 +1,94 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+env:
+  PYTHON_VERSION: "3.12"
+  COMPOSE_FILE: docker-compose.yml
+
+jobs:
+  ruff:
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - run: python -m pip install --upgrade pip
+      - run: pip install ruff
+      - run: ruff check . --output-format=github
+
+
+  test:
+    runs-on: ubuntu-latest
+    needs: ruff
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - uses: docker/setup-buildx-action@v1
+
+      - run: docker compose up -d
+        env:
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          POSTGRES_DB_AUTH: ${{ vars.POSTGRES_DB_AUTH }}
+          POSTGRES_DB_UNIVERSITY: ${{ vars.POSTGRES_DB_UNIVERSITY }}
+          AUTH_SERVICE_INTERNAL_URL: ${{ vars.AUTH_SERVICE_INTERNAL_URL }}
+          AUTH_SERVICE_API_URL: ${{ vars.AUTH_SERVICE_API_URL }}
+          UNIVERSITY_SERVICE_INTERNAL_URL: ${{ vars.UNIVERSITY_SERVICE_INTERNAL_URL }}
+          UNIVERSITY_SERVICE_API_URL: ${{ vars.UNIVERSITY_SERVICE_API_URL }}
+
+      - run: docker build -t test-image:latest .
+
+      - run: |
+          docker run --rm \
+            --network host \
+            -v $(pwd)/allure-results:/back_api/allure-results \
+            test-image:latest || true
+
+
+      - name: Upload allure-results
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: ./allure-results
+
+  allure:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Download allure-results
+        uses: actions/download-artifact@v5
+        with:
+          name: allure-results
+          path: ./allure-results
+
+      - name: Install Allure
+        run: |
+          wget -O /tmp/allure.zip -L https://github.com/allure-framework/allure2/releases/download/2.34.1/allure-2.34.1.zip
+          unzip /tmp/allure.zip -d /opt/
+          echo "/opt/allure-2.34.1/bin" >> $GITHUB_PATH
+
+      - run: |
+          allure generate allure-results -o allure-report --clean
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          token: ${{ secrets.CI_TOKEN }}
+          branch: gh-pages
+          folder: allure-report
+          clean: true
