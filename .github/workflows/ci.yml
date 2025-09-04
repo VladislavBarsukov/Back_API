@@ -57,7 +57,7 @@ jobs:
             test-image:latest || true
 
       - name: Upload allure-results
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
           name: allure-results
           path: ./allure-results
