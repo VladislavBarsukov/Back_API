@@ -56,6 +56,8 @@ jobs:
             -v $(pwd)/allure-results:/back_api/allure-results \
             test-image:latest || true
 
+      - run: ls -lah ./allure-results || echo "allure-results пустая"
+
       - name: Upload allure-results
         uses: actions/upload-artifact@v4
         with:
