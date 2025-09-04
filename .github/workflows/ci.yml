@@ -57,7 +57,7 @@ jobs:
             test-image:latest || true
 
       - name: Upload allure-results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: allure-results
           path: ./allure-results
@@ -70,9 +70,9 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: ${{ env.PYTHON_VERSION }}
-      - uses: docker/setup-buildx-action@v1
+
       - name: Download allure-results
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: allure-results
           path: ./allure-results
