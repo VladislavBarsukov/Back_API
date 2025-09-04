@@ -1,0 +1,46 @@
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 165' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=richardross&password=%2B%2AorlrJ%40us%28bTlfKFuc%25YoId%29X5H%26N&password_repeat=%2B%2AorlrJ%40us%28bTlfKFuc%25YoId%29X5H%26N&email=michael75%40example.org' http://127.0.0.1:8000/auth/register/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.271747'
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 74' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=richardross&password=%2B%2AorlrJ%40us%28bTlfKFuc%25YoId%29X5H%26N' http://127.0.0.1:8000/auth/login/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.314085'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzZXJuYW1lIjoicmljaGFyZHJvc3MiLCJleHAiOjE3NTcwMjg5NzksImlhdCI6MTc1NzAyMTc3OX0.Wv6gKCat7i-OHxrZ_6D0b8DmiQ_gRRHMnUupAFMtpR6SnnTaLL9Y77G3MpHxWyj589ikuXxJ10iKgDaPw_s0dWXacXxGIboOaaAugXujglsPD6gwejJWcLPDTCFrM5abbnCJcRccJc11_MCeR6ZpHC2Gf6cZlRx1gDznVpCrp02zrdFF-kHiILc_rnvU3HKnaf2Y2QmaGFbtKxt1eHkRwUpBGa8sZMULUuZh1oMaCejYLEkEMKroNz1OASzOusiIJk7l4-xCIfbF5zXbeH6RAHwDOmidHfJ-h-DZUVpWzWNuwRqFFZuDBtxKQiDbGFHpBoWkAf4xwi3A5pWskZ__LA",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:33 Starting test: test_creat_student
+INFO     Logger:logger.py:33 Create group, step 1
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzZXJuYW1lIjoicmljaGFyZHJvc3MiLCJleHAiOjE3NTcwMjg5NzksImlhdCI6MTc1NzAyMTc3OX0.Wv6gKCat7i-OHxrZ_6D0b8DmiQ_gRRHMnUupAFMtpR6SnnTaLL9Y77G3MpHxWyj589ikuXxJ10iKgDaPw_s0dWXacXxGIboOaaAugXujglsPD6gwejJWcLPDTCFrM5abbnCJcRccJc11_MCeR6ZpHC2Gf6cZlRx1gDznVpCrp02zrdFF-kHiILc_rnvU3HKnaf2Y2QmaGFbtKxt1eHkRwUpBGa8sZMULUuZh1oMaCejYLEkEMKroNz1OASzOusiIJk7l4-xCIfbF5zXbeH6RAHwDOmidHfJ-h-DZUVpWzWNuwRqFFZuDBtxKQiDbGFHpBoWkAf4xwi3A5pWskZ__LA' -H 'Content-Length: 30' -H 'Content-Type: application/json' -d '{"name": "Christopher Waters"}' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.008440'
+{
+  "name": "Christopher Waters",
+  "id": 3
+}
+
+INFO     Logger:logger.py:33 Create student, step 2
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzZXJuYW1lIjoicmljaGFyZHJvc3MiLCJleHAiOjE3NTcwMjg5NzksImlhdCI6MTc1NzAyMTc3OX0.Wv6gKCat7i-OHxrZ_6D0b8DmiQ_gRRHMnUupAFMtpR6SnnTaLL9Y77G3MpHxWyj589ikuXxJ10iKgDaPw_s0dWXacXxGIboOaaAugXujglsPD6gwejJWcLPDTCFrM5abbnCJcRccJc11_MCeR6ZpHC2Gf6cZlRx1gDznVpCrp02zrdFF-kHiILc_rnvU3HKnaf2Y2QmaGFbtKxt1eHkRwUpBGa8sZMULUuZh1oMaCejYLEkEMKroNz1OASzOusiIJk7l4-xCIfbF5zXbeH6RAHwDOmidHfJ-h-DZUVpWzWNuwRqFFZuDBtxKQiDbGFHpBoWkAf4xwi3A5pWskZ__LA' -H 'Content-Length: 143' -H 'Content-Type: application/json' -d '{"first_name": "Jessica", "last_name": "Hunt", "email": "kingkelly@example.com", "degree": "Doctorate", "phone": "+70467018183", "group_id": 3}' http://127.0.0.1:8001/students/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.015108'
+{
+  "first_name": "Jessica",
+  "last_name": "Hunt",
+  "email": "kingkelly@example.com",
+  "degree": "Doctorate",
+  "phone": "+70467018183",
+  "group_id": 3,
+  "id": 1
+}
+
+INFO     Logger:logger.py:33 Assert student id, step 3
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzZXJuYW1lIjoicmljaGFyZHJvc3MiLCJleHAiOjE3NTcwMjg5NzksImlhdCI6MTc1NzAyMTc3OX0.Wv6gKCat7i-OHxrZ_6D0b8DmiQ_gRRHMnUupAFMtpR6SnnTaLL9Y77G3MpHxWyj589ikuXxJ10iKgDaPw_s0dWXacXxGIboOaaAugXujglsPD6gwejJWcLPDTCFrM5abbnCJcRccJc11_MCeR6ZpHC2Gf6cZlRx1gDznVpCrp02zrdFF-kHiILc_rnvU3HKnaf2Y2QmaGFbtKxt1eHkRwUpBGa8sZMULUuZh1oMaCejYLEkEMKroNz1OASzOusiIJk7l4-xCIfbF5zXbeH6RAHwDOmidHfJ-h-DZUVpWzWNuwRqFFZuDBtxKQiDbGFHpBoWkAf4xwi3A5pWskZ__LA' http://127.0.0.1:8001/students/1/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.006896'
+{
+  "first_name": "Jessica",
+  "last_name": "Hunt",
+  "email": "kingkelly@example.com",
+  "degree": "Doctorate",
+  "phone": "+70467018183",
+  "group_id": 3,
+  "id": 1
+}
