@@ -1,0 +1,18 @@
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 150' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=obarnes&password=%5E6zNghmAfyM%25F%28neV%236RpYFq5sTWlS&password_repeat=%5E6zNghmAfyM%25F%28neV%236RpYFq5sTWlS&email=brittany03%40example.org' http://127.0.0.1:8000/auth/register/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.300256'
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 64' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=obarnes&password=%5E6zNghmAfyM%25F%28neV%236RpYFq5sTWlS' http://127.0.0.1:8000/auth/login/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.316566'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoib2Jhcm5lcyIsImV4cCI6MTc1NzAyOTI2NiwiaWF0IjoxNzU3MDIyMDY2fQ.gm_ZyWEfJoaSjMUJlj2mJNdaABXVTuwGvlWpPfLxVubsCEIrPW1dwYimE8Vn6-32Wg7ceQzSxe8HnqkqXCgKJndfDLKmyKyLAK_UnUtT1Lvy2WIAu62zs6wXWamSvqxPFwyV53WX2L0pMlbKVXafWuTN-raDw0ZBPHUyN66sXQF_6CYno8JzZzkIiS6BSvUVfYyDZt1i-nmUefVbCFNmO_C8F5L9bD29XC-_G3An9TxPGIrkpSNppnwjM8glOhJtEQx7OfjHs9jpw8fubEq7h3wnlcUvNn45b2sUCdzpjF5EOMIP0qFrbDEn5iolgjKyQYn3i5QfytBofhHlw0SS5w",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoib2Jhcm5lcyIsImV4cCI6MTc1NzAyOTI2NiwiaWF0IjoxNzU3MDIyMDY2fQ.gm_ZyWEfJoaSjMUJlj2mJNdaABXVTuwGvlWpPfLxVubsCEIrPW1dwYimE8Vn6-32Wg7ceQzSxe8HnqkqXCgKJndfDLKmyKyLAK_UnUtT1Lvy2WIAu62zs6wXWamSvqxPFwyV53WX2L0pMlbKVXafWuTN-raDw0ZBPHUyN66sXQF_6CYno8JzZzkIiS6BSvUVfYyDZt1i-nmUefVbCFNmO_C8F5L9bD29XC-_G3An9TxPGIrkpSNppnwjM8glOhJtEQx7OfjHs9jpw8fubEq7h3wnlcUvNn45b2sUCdzpjF5EOMIP0qFrbDEn5iolgjKyQYn3i5QfytBofhHlw0SS5w' -H 'Content-Length: 25' -H 'Content-Type: application/json' -d '{"name": "Sheryl Monroe"}' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.034320'
+{
+  "name": "Sheryl Monroe",
+  "id": 1
+}
