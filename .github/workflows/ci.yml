@@ -37,12 +37,6 @@ jobs:
 
       - run: docker build -t test-image:latest .
 
-      - name: Install Allure
-        run: |
-          wget -O /tmp/allure.zip -L https://github.com/allure-framework/allure2/releases/download/2.34.1/allure-2.34.1.zip
-          unzip /tmp/allure.zip -d /opt/
-          echo "/opt/allure-2.34.1/bin" >> $GITHUB_PATH
-
   test:
     runs-on: ubuntu-latest
     needs: ci
@@ -59,6 +53,12 @@ jobs:
             --env-file .env \
             -v $(pwd)/allure-results:/back_api/allure-results \
             test-image:latest || true
+
+      - name: Install Allure
+        run: |
+          wget -O /tmp/allure.zip -L https://github.com/allure-framework/allure2/releases/download/2.34.1/allure-2.34.1.zip
+          unzip /tmp/allure.zip -d /opt/
+          echo "/opt/allure-2.34.1/bin" >> $GITHUB_PATH
 
       - run: |
           allure generate allure-results -o allure-report --clean
