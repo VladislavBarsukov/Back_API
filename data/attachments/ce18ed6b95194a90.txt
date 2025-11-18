@@ -1,0 +1,24 @@
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 181' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=fergusonvictoria&password=h%29b%40jBjw%2BmC1%23Dq%24CT%29zF%2BtEi%24G4W%2B&password_repeat=h%29b%40jBjw%2BmC1%23Dq%24CT%29zF%2BtEi%24G4W%2B&email=ochoatiffany%40example.net' http://127.0.0.1:8000/auth/register/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.271248'
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 83' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=fergusonvictoria&password=h%29b%40jBjw%2BmC1%23Dq%24CT%29zF%2BtEi%24G4W%2B' http://127.0.0.1:8000/auth/login/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.312076'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiZmVyZ3Vzb252aWN0b3JpYSIsImV4cCI6MTc2MzQ3OTMzMiwiaWF0IjoxNzYzNDcyMTMyfQ.Wn97L_J_Hd7deoOZFSfUy40kQudvba6Ih2vB7FVsqmk_zkVGpOBQaDj0cf-lOm6TuDRuN8WI506fdptPRdTF0ch7zEE4DgENATgk4wgvboZcB7zGrUy1qKVHTSmHEfPayzI-uJqlTZBDq4CvXJKG_bUF4CipVyCmje_hZ5_6yoXEm5aIU33P74g9bDmdlThDfiPV8DBtAnJXIiCn93-blfzppFJlNCMkR6sIQW5NcCIIun_x0xMCjdhvQyK1EdYhlPlRbFr8qoqY-lEAIeLFGOG2-DpandOXSUkc7cGOO3_-O3GJZ-b1y5hpzrpE6fLBVcW1amEtm7ONXcwVQdgXLA",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiZmVyZ3Vzb252aWN0b3JpYSIsImV4cCI6MTc2MzQ3OTMzMiwiaWF0IjoxNzYzNDcyMTMyfQ.Wn97L_J_Hd7deoOZFSfUy40kQudvba6Ih2vB7FVsqmk_zkVGpOBQaDj0cf-lOm6TuDRuN8WI506fdptPRdTF0ch7zEE4DgENATgk4wgvboZcB7zGrUy1qKVHTSmHEfPayzI-uJqlTZBDq4CvXJKG_bUF4CipVyCmje_hZ5_6yoXEm5aIU33P74g9bDmdlThDfiPV8DBtAnJXIiCn93-blfzppFJlNCMkR6sIQW5NcCIIun_x0xMCjdhvQyK1EdYhlPlRbFr8qoqY-lEAIeLFGOG2-DpandOXSUkc7cGOO3_-O3GJZ-b1y5hpzrpE6fLBVcW1amEtm7ONXcwVQdgXLA' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.007220'
+[
+  {
+    "name": "Kendra Hudson",
+    "id": 1
+  },
+  {
+    "name": "Scott Edwards",
+    "id": 2
+  }
+]

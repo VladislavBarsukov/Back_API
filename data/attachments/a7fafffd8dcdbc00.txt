@@ -1,0 +1,24 @@
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 162' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=xbrewer&password=wdh%237%5ExqgUaEhpU%21%29yaVYwk%289q%5Ese%28&password_repeat=wdh%237%5ExqgUaEhpU%21%29yaVYwk%289q%5Ese%28&email=erikasmith%40example.org' http://127.0.0.1:8000/auth/register/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.297762'
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 70' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=xbrewer&password=wdh%237%5ExqgUaEhpU%21%29yaVYwk%289q%5Ese%28' http://127.0.0.1:8000/auth/login/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.311705'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoieGJyZXdlciIsImV4cCI6MTc2MzQ3OTMzMSwiaWF0IjoxNzYzNDcyMTMxfQ.hGjtcPUP2gxrQQkRdW0tUuwSySyIB0QonHJOIVlZywZ9SzgBSmaMPDaMyqPhaK6_Cljpbi4BE-sM-ZvBJlomEYQuZp2P_Re7wzJtwJUQfZI208lXNsvKdhczzmys4-rpv7cl3KxYmp78XAqw9u6-VU1afBteOsyczZDv6jK9XAxtjCWij70CTVG2G2KYnecl6h_Re3xBQo3PGlFp1IZBt5jBVXYzmL8ugDWzZVEp2BlR_wY4RXGfoXWWra8jTxDUQNiW3oizvUw49HtJjVQwfSgu903JchIrK2-iI_Y16UbMqUWAIkoNwTbrvg4vsI0UCFTo0WrUV253yymzmpeNzA",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoieGJyZXdlciIsImV4cCI6MTc2MzQ3OTMzMSwiaWF0IjoxNzYzNDcyMTMxfQ.hGjtcPUP2gxrQQkRdW0tUuwSySyIB0QonHJOIVlZywZ9SzgBSmaMPDaMyqPhaK6_Cljpbi4BE-sM-ZvBJlomEYQuZp2P_Re7wzJtwJUQfZI208lXNsvKdhczzmys4-rpv7cl3KxYmp78XAqw9u6-VU1afBteOsyczZDv6jK9XAxtjCWij70CTVG2G2KYnecl6h_Re3xBQo3PGlFp1IZBt5jBVXYzmL8ugDWzZVEp2BlR_wY4RXGfoXWWra8jTxDUQNiW3oizvUw49HtJjVQwfSgu903JchIrK2-iI_Y16UbMqUWAIkoNwTbrvg4vsI0UCFTo0WrUV253yymzmpeNzA' -H 'Content-Length: 25' -H 'Content-Type: application/json' -d '{"name": "Scott Edwards"}' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.009113'
+{
+  "name": "Scott Edwards",
+  "id": 2
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoieGJyZXdlciIsImV4cCI6MTc2MzQ3OTMzMSwiaWF0IjoxNzYzNDcyMTMxfQ.hGjtcPUP2gxrQQkRdW0tUuwSySyIB0QonHJOIVlZywZ9SzgBSmaMPDaMyqPhaK6_Cljpbi4BE-sM-ZvBJlomEYQuZp2P_Re7wzJtwJUQfZI208lXNsvKdhczzmys4-rpv7cl3KxYmp78XAqw9u6-VU1afBteOsyczZDv6jK9XAxtjCWij70CTVG2G2KYnecl6h_Re3xBQo3PGlFp1IZBt5jBVXYzmL8ugDWzZVEp2BlR_wY4RXGfoXWWra8jTxDUQNiW3oizvUw49HtJjVQwfSgu903JchIrK2-iI_Y16UbMqUWAIkoNwTbrvg4vsI0UCFTo0WrUV253yymzmpeNzA' -H 'Content-Length: 25' -H 'Content-Type: application/json' -d '{"name": "Scott Edwards"}' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '409', elapsed_time='0:00:00.007173'
+{
+  "detail": "Group is already created"
+}

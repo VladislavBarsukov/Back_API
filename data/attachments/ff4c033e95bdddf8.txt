@@ -1,0 +1,18 @@
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 156' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=imyers&password=%2BD6HyVqXqI%28mTwLkM8%26%2AaVBd%24t11gk&password_repeat=%2BD6HyVqXqI%28mTwLkM8%26%2AaVBd%24t11gk&email=tiffanywalter%40example.org' http://127.0.0.1:8000/auth/register/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.301131'
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 65' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=imyers&password=%2BD6HyVqXqI%28mTwLkM8%26%2AaVBd%24t11gk' http://127.0.0.1:8000/auth/login/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.315902'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiaW15ZXJzIiwiZXhwIjoxNzYzNDc5MzMwLCJpYXQiOjE3NjM0NzIxMzB9.h7UJjJ7EcPP31cJ9u1D4t83wq4PHMpR4IlyzPe2z4JQlKHk7yqQg1KQCtFw3Y8XL1T09vM1om-G_jUDGYCS5nW0ueuPhqefoB544xOO_IWFxW_YVherokrqDcM-_nEl8Th8Eh0WYOyJyo9yaa00ID2-_fZm6vvGoeUK0rxWeVwdV3_jUWjD_Sm2gfaBc1Q8I-fIa3cppYDo9zIRFFppwj-mzEebubOsmc_u715Zb5G2dr1jeGiOvufOF6QbfRxBmV_SUkRsPdCawoMow03pSwNwiF36G3IHlsk3ELGd_pY3tPJNWOIID6i6yNSNgwXs9Ba8JK-Yq6p7kJzqfg1wj_w",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiaW15ZXJzIiwiZXhwIjoxNzYzNDc5MzMwLCJpYXQiOjE3NjM0NzIxMzB9.h7UJjJ7EcPP31cJ9u1D4t83wq4PHMpR4IlyzPe2z4JQlKHk7yqQg1KQCtFw3Y8XL1T09vM1om-G_jUDGYCS5nW0ueuPhqefoB544xOO_IWFxW_YVherokrqDcM-_nEl8Th8Eh0WYOyJyo9yaa00ID2-_fZm6vvGoeUK0rxWeVwdV3_jUWjD_Sm2gfaBc1Q8I-fIa3cppYDo9zIRFFppwj-mzEebubOsmc_u715Zb5G2dr1jeGiOvufOF6QbfRxBmV_SUkRsPdCawoMow03pSwNwiF36G3IHlsk3ELGd_pY3tPJNWOIID6i6yNSNgwXs9Ba8JK-Yq6p7kJzqfg1wj_w' -H 'Content-Length: 25' -H 'Content-Type: application/json' -d '{"name": "Kendra Hudson"}' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.031692'
+{
+  "name": "Kendra Hudson",
+  "id": 1
+}
