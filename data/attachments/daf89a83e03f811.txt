@@ -1,0 +1,18 @@
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 147' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=kjackson&password=hWRk5rmw%2BO%29GcRxj%24DI8NpVBR7d43y&password_repeat=hWRk5rmw%2BO%29GcRxj%24DI8NpVBR7d43y&email=lopezmindy%40example.com' http://127.0.0.1:8000/auth/register/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.297758'
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 63' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=kjackson&password=hWRk5rmw%2BO%29GcRxj%24DI8NpVBR7d43y' http://127.0.0.1:8000/auth/login/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.315183'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoia2phY2tzb24iLCJleHAiOjE3NjM0NzkxMzMsImlhdCI6MTc2MzQ3MTkzM30.i0dOg0MzTNcYHcnEK53XwXhK7UyHhP9IHu-a1A53jWr4FSl2FYnGKM6rziqpjbPTH9fuQdP0n4ztUs6qccOLOoa2cPArSFx3oKVnJM13YuGbcvxtBPhMQmZzO9YsxF9WMCE3G4ZLRpulHPhDEXHXpFuJE7vRCc0dETkEolNDTBU9wYloYehULMZX6iS-etLw57r8LNRli8fCAq6sRluPeOgw7Sk98Ho0MP723H-cM9pPMcoTU6b2ZlEdG_iWIdUOJWQZ4C2GHjhcUhRLFPmo17MEPtFJQ9wungjnxkPnWrZwp1CorKBWqi_CIhk8-l0slVzcdKI_CivWetaBe-HFNQ",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoia2phY2tzb24iLCJleHAiOjE3NjM0NzkxMzMsImlhdCI6MTc2MzQ3MTkzM30.i0dOg0MzTNcYHcnEK53XwXhK7UyHhP9IHu-a1A53jWr4FSl2FYnGKM6rziqpjbPTH9fuQdP0n4ztUs6qccOLOoa2cPArSFx3oKVnJM13YuGbcvxtBPhMQmZzO9YsxF9WMCE3G4ZLRpulHPhDEXHXpFuJE7vRCc0dETkEolNDTBU9wYloYehULMZX6iS-etLw57r8LNRli8fCAq6sRluPeOgw7Sk98Ho0MP723H-cM9pPMcoTU6b2ZlEdG_iWIdUOJWQZ4C2GHjhcUhRLFPmo17MEPtFJQ9wungjnxkPnWrZwp1CorKBWqi_CIhk8-l0slVzcdKI_CivWetaBe-HFNQ' -H 'Content-Length: 26' -H 'Content-Type: application/json' -d '{"name": "Megan Oconnell"}' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.031898'
+{
+  "name": "Megan Oconnell",
+  "id": 1
+}

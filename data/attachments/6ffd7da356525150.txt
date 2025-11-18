@@ -1,0 +1,24 @@
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 158' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=montoyadebra&password=%26KFHk4EPZF%40XH0%21qGG0gyApn%25%5Er%26IL&password_repeat=%26KFHk4EPZF%40XH0%21qGG0gyApn%25%5Er%26IL&email=nward%40example.org' http://127.0.0.1:8000/auth/register/
+INFO     Logger:logger.py:33 Response status code: '201', elapsed_time='0:00:00.272098'
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 73' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=montoyadebra&password=%26KFHk4EPZF%40XH0%21qGG0gyApn%25%5Er%26IL' http://127.0.0.1:8000/auth/login/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.312104'
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoibW9udG95YWRlYnJhIiwiZXhwIjoxNzYzNDc5MTM1LCJpYXQiOjE3NjM0NzE5MzV9.iZlD4WiAjPH5TcDVYUfbkiEXrQOhknEWA-yoiIrSzfmZvaJhtd0fVHB61hFp-0Mn3y9hBhgd-76VrT-45ZAsFaJuLmJm_0hWcqQ-u0scmoSjl1bYIqGEtbt_fykYBz3nsh-45LDNs7UjgtyecFSCOHkrYg3I9KXIdPhWcDOM1lpGTnIPLQ-FwPcuzj7-lHc68WPmjoso3ewhS8X1k_xngWA_9VaXMu5k45VW9CA9MrlIWJQtIpdV7xioqdHd66sqZzIHwao3SnR672JVETc7hThahBZfHtJWN4z_qof8uDuGislZG2viUnYztAuXQlynvyrnmZWe5JNO5VIzePu8zw",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:33 Request: curl -H 'User-Agent: python-requests/2.32.3' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoibW9udG95YWRlYnJhIiwiZXhwIjoxNzYzNDc5MTM1LCJpYXQiOjE3NjM0NzE5MzV9.iZlD4WiAjPH5TcDVYUfbkiEXrQOhknEWA-yoiIrSzfmZvaJhtd0fVHB61hFp-0Mn3y9hBhgd-76VrT-45ZAsFaJuLmJm_0hWcqQ-u0scmoSjl1bYIqGEtbt_fykYBz3nsh-45LDNs7UjgtyecFSCOHkrYg3I9KXIdPhWcDOM1lpGTnIPLQ-FwPcuzj7-lHc68WPmjoso3ewhS8X1k_xngWA_9VaXMu5k45VW9CA9MrlIWJQtIpdV7xioqdHd66sqZzIHwao3SnR672JVETc7hThahBZfHtJWN4z_qof8uDuGislZG2viUnYztAuXQlynvyrnmZWe5JNO5VIzePu8zw' http://127.0.0.1:8001/groups/
+INFO     Logger:logger.py:33 Response status code: '200', elapsed_time='0:00:00.008727'
+[
+  {
+    "name": "Megan Oconnell",
+    "id": 1
+  },
+  {
+    "name": "Sean Ellis",
+    "id": 2
+  }
+]
