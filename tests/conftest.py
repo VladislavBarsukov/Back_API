@@ -13,6 +13,7 @@ from back_api.utils.api_utils import ApiUtils
 faker = Faker()
 
 
+
 @pytest.fixture(scope="function", autouse=False)
 def auth_api_utils_anonym():
     api_utils = ApiUtils(url=AuthService.SERVICE_URL)
